@@ -23,7 +23,7 @@ const noBtn = document.querySelector(".No");
 const yesBtn = document.querySelector(".Yes");
 
 let esp = 0;
-noBtn.addEventListener("mouseenter", () => {
+ function moveNo() {
     esp ++;
 
     const x = Math.random() * 300 - 230;
@@ -33,4 +33,7 @@ noBtn.addEventListener("mouseenter", () => {
 
     const scale = Math.min (1 + esp * 0.1, 1.6);
     yesBtn.style.transform = `scale(${scale})`;
-})
+
+}
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
